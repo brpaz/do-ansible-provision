@@ -19,7 +19,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Build Docker image
-        run: docker build -t $TEST_IMAGE_NAME
+        run: docker build -t $TEST_IMAGE_NAME .
 
       - name: Save image
         run: docker save -o image.tar $TEST_IMAGE_NAME
