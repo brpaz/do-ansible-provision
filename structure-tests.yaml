@@ -1,0 +1,13 @@
+schemaVersion: 2.0.0
+commandTests:
+  - name: "Ansible Is installed"
+    command: ansible
+    args: ["--version"]
+    exitCode: 0
+    expectedOutput:
+      - ".*ansible 2.9.7.*"
+
+  - name: "Doctl is installed"
+    command: doctl
+    args: ["version"]
+    exitCode: 0
