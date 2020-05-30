@@ -7,7 +7,7 @@
     [
       "@eclass/semantic-release-docker",
       {
-        "baseImageName": "doks-deploy-tools",
+        "baseImageName": "do-ansible-provision",
         "registries": [
           {
             "url": "docker.io",
