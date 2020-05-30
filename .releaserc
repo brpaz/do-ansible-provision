@@ -1,17 +1,22 @@
 {
   "plugins": [
     "@semantic-release/commit-analyzer",
-    "@semantic-release/release-notes-generator", 
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/git",
     "@semantic-release/github",
-    "@iteratec/semantic-release-docker"
-  ],
-  "verifyConfig": ["@iteratec/semantic-release-docker"],
-  "prepare": {
-    "path": "@iteratec/semantic-release-docker",
-    "imageName": "myimage",
-    "respositoryName": "brpaz"
-  },
-  "publish": {
-    "path": "@iteratec/semantic-release-docker"
-  }
+    [
+      "@eclass/semantic-release-docker",
+      {
+        "baseImageName": "doks-deploy-tools",
+        "registries": [
+          {
+            "url": "docker.io",
+            "imageName": "docker.io/brpaz/do-ansible-provision",
+            "user": "DOCKER_USER",
+            "password": "DOCKER_PASSWORD"
+          }
+        ]
+      }
+    ]
+  ]
 }
