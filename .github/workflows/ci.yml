@@ -46,7 +46,7 @@ jobs:
         id: image_name
         run: echo "##[set-output name=image;]$(echo $TEST_IMAGE_NAME)"
 
-      - uses: brpaz/structure-tests@master
+      - uses: brpaz/structure-tests-action@master
         with:
           image: ${{steps.image_name.outputs.image}}
 
